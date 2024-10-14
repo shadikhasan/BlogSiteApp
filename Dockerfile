@@ -50,9 +50,9 @@ COPY --from=frontend /app/frontend /app/frontend
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Expose ports
+EXPOSE 7000
 EXPOSE 8000
-EXPOSE 5173
-EXPOSE 5432
+EXPOSE 6000
 
 # Start Supervisor
 CMD ["/usr/bin/supervisord"]
