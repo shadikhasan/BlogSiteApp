@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+}
+
+.first-part {
+    display: flex; /* Use flexbox for the first part */
+    margin-bottom: 20px; /* Space between first and second parts */
+}
+
+.slider {
+    flex: 1; /* Take up one part of the space */
+    margin-right: 20px; /* Space between slider and post list */
+}
+
+.post-list {
+    flex: 2; /* Take up two parts of the space */
+}
+
+.second-part {
+    /* This can be styled as needed */
+    /* For instance, you can give it some padding or background color */
+    padding: 10px;
+    background-color: #f8f9fa; /* Light background for the second part */
+}

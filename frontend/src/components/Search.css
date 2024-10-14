@@ -1,0 +1,75 @@
+/* src/components/Search.css */
+
+.header-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f9fa; /* Light background color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.header-title {
+  margin: 0;
+  font-size: 2rem; /* Header title size */
+}
+
+/* Container for the search input and clear button */
+.search-container {
+  position: relative; /* Required for positioning the clear button */
+  width: 100%; /* Full width for the container */
+  max-width: 600px; /* Limit max width for larger screens */
+  margin: 0 auto; /* Center the container */
+  display: flex; /* Use flex for alignment */
+  align-items: center; /* Center items vertically */
+}
+
+/* Style for the input field */
+.search-input {
+  flex: 1; /* Allow input to grow and take available space */
+  height: 50px; /* Fixed height for consistency */
+  padding: 0 40px 0 15px; /* Add padding for text and clear button */
+  border: 1px solid #ced4da; /* Border color */
+  border-radius: 25px; /* Rounded corners */
+  font-size: 1rem; /* Font size */
+  outline: none; /* Remove outline */
+  transition: border-color 0.3s; /* Smooth transition for focus */
+}
+
+/* Change border color on focus */
+.search-input:focus {
+  border-color: #007bff; /* Highlight border on focus */
+}
+
+/* Clear button styles */
+.clear-button {
+  position: absolute; /* Position it inside the input container */
+  right: 15px; /* Align to the right */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust for vertical centering */
+  border: none; /* Remove border */
+  background: none; /* No background */
+  cursor: pointer; /* Change cursor to pointer */
+  color: #007bff; /* Icon color */
+  font-size: 1.2rem; /* Icon size */
+}
+
+/* Change color on hover */
+.clear-button:hover {
+  color: #0056b3; /* Darker color on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .search-container {
+    max-width: 90%; /* Allow more width on smaller screens */
+  }
+
+  .search-input {
+    font-size: 0.9rem; /* Slightly smaller font on smaller screens */
+  }
+
+  .clear-button {
+    font-size: 1rem; /* Adjust icon size on smaller screens */
+  }
+}

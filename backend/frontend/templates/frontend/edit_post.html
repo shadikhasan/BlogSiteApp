@@ -1,0 +1,21 @@
+
+{% extends "myapp/base.html" %}
+
+{% block title %}Create Post{% endblock %}
+
+{% block content %}
+    <div>
+        <div class="container mt-5">
+            <h2>Edit Post: {{ post.title }}</h2>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.media }}  <!-- Render the form fields -->
+                {{ form.as_p }}  <!-- Render the form fields -->
+                <button type="submit" class="btn btn-primary">Update Post</button>
+            </form>
+            <a href="{% url 'my-posts' %}" class="btn btn-secondary mt-3">Back to My Posts</a>
+        </div>
+    </div>
+
+{% endblock %}
+

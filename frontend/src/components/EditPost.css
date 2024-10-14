@@ -1,0 +1,103 @@
+.edit-post-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .edit-post-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .input-control,
+  .form-control {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+  }
+  
+  .input-control:focus,
+  .form-control:focus {
+    border-color: #007BFF;
+    outline: none;
+  }
+  
+  .btn {
+    padding: 12px 20px; /* Increased padding */
+    border: none;
+    border-radius: 6px; /* Slightly larger border radius for a smoother look */
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px; /* Larger font size for better visibility */
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .error-message {
+    background-color: rgba(255, 0, 0, 0.1); /* Light red background */
+    border: 1px solid red; /* Red border */
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .thumbnail-preview {
+    display: flex;
+    gap: 15px; /* Increased gap for better spacing */
+    border: 1px solid #ddd; /* Border around the preview area */
+    padding: 10px; /* Padding for the preview area */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background color */
+  }
+  
+  .current-thumbnail,
+  .preview-thumbnail {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  .current-thumbnail:hover,
+  .preview-thumbnail:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    transition: transform 0.2s ease; /* Smooth transition */
+  }
+  
+  .preview-thumbnail {
+    margin-top: 10px;
+    border: 2px dashed #007BFF;
+  }
+  
+  .thumbnail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the images and captions */
+    margin-bottom: 10px;
+  }
+  
+  .thumbnail-caption {
+    margin-top: 5px; /* Space between the image and the caption */
+    font-size: 14px; /* Font size for the caption */
+    color: #555; /* Caption color */
+    text-align: center; /* Center-align the caption text */
+  }
+  

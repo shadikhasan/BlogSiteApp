@@ -1,0 +1,15 @@
+<!-- myapp/templates/myapp/delete_confirmation.html -->
+{% extends "myapp/base.html" %}
+
+{% block title %}Confirm Delete{% endblock %}
+
+{% block content %}
+    <div class="alert alert-danger" role="alert">
+        Are you sure you want to delete "{{ post.title }}"?
+    </div>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a href="{% url 'my-posts' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+{% endblock %}

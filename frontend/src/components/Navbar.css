@@ -1,0 +1,40 @@
+/* src/components/Navbar.css */
+.navbar {
+    background: linear-gradient(90deg, #007bff, #0056b3); /* Gradient background */
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-logo {
+    width: 40px; /* Adjust the logo size */
+    height: auto;
+    margin-right: 10px; /* Space between logo and text */
+}
+
+.nav-link {
+    color: white;
+    transition: color 0.3s; /* Smooth transition for hover effects */
+}
+
+.nav-link:hover {
+    color: #ffc107; /* Color on hover */
+}
+
+.active {
+    border-bottom: 2px solid #ffc107; /* Active link indicator */
+}
+
+.btn-outline-light {
+    border: 1px solid rgba(255, 255, 255, 0.7); /* Outline style */
+}
+
+.btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Background on hover */
+}
+
+.shadow {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+}

@@ -1,0 +1,14 @@
+{%extends 'myapp/base.html'%}
+
+{% block content %}
+<div></div>
+    <h1>List of Admin Users</h1>
+    <ul>
+        {% for admin in admins %}
+            <li>
+                {{ admin.username }} - {{ admin.email }}  <!-- Assuming you have these fields -->
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

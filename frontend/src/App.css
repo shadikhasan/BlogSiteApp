@@ -1,0 +1,114 @@
+.mainContainer {
+    display: flex;
+    flex-direction: row; /* Default layout */
+    margin: 5px 10%; /* top, right, bottom, left */
+    padding: 30px;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow items to wrap to the next line if necessary */
+}
+
+.container1 {
+    margin-right: 20px; /* Space between containers */
+    display: flex;
+    flex-direction: column;
+    flex: 3; /* Takes up 3 parts of the space */
+    min-width: 300px; /* Ensure a minimum width */
+}
+
+.slider {
+    margin-bottom: 30px;
+}
+
+.recent-posts {
+    margin-bottom: 10px;
+}
+
+.container2 {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: stretch; /* Stretch items to full width */
+    flex: 1; /* Takes up 1 part of the space */
+    padding: 10px;
+    min-width: 250px; /* Ensure a minimum width */
+}
+.c2-item1{
+    margin-top: 16px;
+    margin-bottom: 15px;
+}
+.c2-item2, .c2-item3, .c2-item4 {
+    flex: none; /* Do not grow or shrink, take their normal height */
+    width: 100%; /* Ensure full width */
+    margin-bottom: 20px; /* Space between items */
+    padding: 10px; /* Padding inside each item */
+    background-color: #f8f9fa; /* Background color for the items */
+    border: 1px solid #ddd; /* Light border around items */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Responsive styles for tablets */
+@media (max-width: 1024px) {
+    .mainContainer {
+        flex-direction: column; /* Stack containers on smaller screens */
+        margin: 5px; /* Reduce margin for smaller screens */
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+    
+    .container1, .container2 {
+        margin-right: 0; /* Remove margin on smaller screens */
+        width: 100%; /* Full width on smaller screens */
+    }
+    
+    .container2 {
+        align-items: stretch; /* Allow items to stretch fully */
+    }
+    
+    .c2-item1, .c2-item2, .c2-item3, .c2-item4 {
+        width: 100%; /* Ensure each item takes up the full width */
+        margin-bottom: 20px; /* Add some space between items */
+    }
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+    .mainContainer {
+        flex-direction: column;
+        margin: 5px; /* Narrow margins for mobile devices */
+        padding: 10px; /* Smaller padding for mobile devices */
+    }
+    
+    .container1 {
+        min-width: unset; /* Remove the min-width restriction */
+        width: 100%; /* Make container1 take full width */
+        margin-bottom: 20px; /* Add space between sections */
+    }
+    
+    .container2 {
+        width: 100%; /* Make container2 take full width */
+        min-width: unset; /* Remove the min-width restriction */
+        padding: 0; /* Remove padding to save space */
+        align-items: stretch; /* Stretch items to full width */
+    }
+    
+    .c2-item1, .c2-item2, .c2-item3, .c2-item4 {
+        width: 100%; /* Ensure full width for items */
+        margin-bottom: 15px; /* Slightly reduce space between items */
+    }
+}
+
+/* Additional fine-tuning for extra small devices */
+@media (max-width: 480px) {
+    .mainContainer {
+        padding: 5px; /* Minimal padding for very small screens */
+        margin: 0 2%; /* Narrow margins */
+    }
+    
+    .container1, .container2 {
+        width: 100%;
+        margin: 0; /* Remove margins entirely */
+    }
+    
+    .c2-item1, .c2-item2, .c2-item3, .c2-item4 {
+        margin-bottom: 10px; /* Reduce the space between items */
+    }
+}

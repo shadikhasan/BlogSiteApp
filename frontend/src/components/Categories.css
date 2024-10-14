@@ -1,0 +1,128 @@
+/* General Styles */
+.categories-container {
+    background-color: #f8f9fa; /* Light background color */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px;
+    padding: 15px;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 20px 0; /* Margin for spacing */
+    height: auto; /* Adjust this based on your layout */
+    max-height: 100vh; /* Restrict to viewport height if necessary */
+    overflow-y: auto; /* Allow scrolling in this container */
+}
+
+.categories-title {
+    color: #003366; /* Dark blue text color */
+    margin-bottom: 10px;
+    font-size: 1.5rem; /* Slightly larger title */
+    text-transform: uppercase; /* Uppercase title */
+}
+
+.category-list {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.category-item {
+    margin: 5px 0; /* Margin between items */
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between; /* Space between name and count */
+    background-color: #fff; /* White background */
+    padding: 10px; /* Padding inside each category */
+    cursor: pointer; /* Pointer cursor on hover */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Transition effect for hover */
+}
+
+.category-header:hover {
+    background-color: #f0f0f0; /* Light gray on hover */
+}
+
+.category-name {
+    font-weight: bold; /* Bold category name */
+}
+
+.post-count {
+    color: #666; /* Grey color for post count */
+}
+
+/* Media Queries for Responsiveness */
+
+/* Small devices (max-width: 768px) - Mobile phones and smaller tablets */
+@media (max-width: 768px) {
+    .categories-container {
+        padding: 10px;
+        margin: 15px 0; /* Reduce the margin on mobile */
+        box-shadow: none; /* Remove shadow for a cleaner look on small screens */
+    }
+
+    .categories-title {
+        font-size: 1.2rem; /* Slightly smaller title for mobile */
+    }
+
+    .category-header {
+        padding: 8px; /* Less padding for mobile */
+    }
+
+    .category-name {
+        font-size: 1rem; /* Adjust font size for mobile */
+    }
+
+    .post-count {
+        font-size: 0.9rem; /* Slightly smaller post count font on mobile */
+    }
+}
+
+/* Medium devices (max-width: 1024px) - Tablets */
+@media (max-width: 1024px) {
+    .categories-container {
+        padding: 12px;
+        margin: 18px 0;
+    }
+
+    .categories-title {
+        font-size: 1.4rem; /* Slightly smaller for tablets */
+    }
+
+    .category-header {
+        padding: 9px;
+    }
+
+    .category-name {
+        font-size: 1.1rem;
+    }
+
+    .post-count {
+        font-size: 0.95rem;
+    }
+}
+
+/* Large devices (min-width: 1024px) - Desktops */
+@media (min-width: 1024px) {
+    .categories-container {
+        padding: 15px;
+        margin: 20px 0;
+    }
+
+    .categories-title {
+        font-size: 1.5rem;
+    }
+
+    .category-header {
+        padding: 10px;
+    }
+
+    .category-name {
+        font-size: 1.2rem;
+    }
+
+    .post-count {
+        font-size: 1rem;
+    }
+}

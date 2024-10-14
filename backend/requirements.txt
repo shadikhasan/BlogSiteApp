@@ -1,0 +1,12 @@
+Django==5.1.1
+djangorestframework==3.15.2
+psycopg2-binary==2.9.9
+django-ckeditor
+pillow
+djangorestframework-simplejwt
+django-cors-headers
+django-filter
+dj-database-url
+setuptools
+wheel
+requests

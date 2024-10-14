@@ -1,0 +1,26 @@
+.facebook-page-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.facebook-page-card .card-body {
+    padding: 20px;
+}
+
+.facebook-page-card .card-title {
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.facebook-embed-container {
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Ensures the container takes the full width */
+    overflow: hidden; /* Prevents overflow */
+}
+
+.fb-page {
+    width: 100%; /* Set to 100% to fit within the parent container */
+    max-width: 340px; /* You can set a maximum width as needed */
+}

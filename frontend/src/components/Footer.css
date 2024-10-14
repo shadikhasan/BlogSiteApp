@@ -1,0 +1,53 @@
+/* Footer styles */
+.footer {
+    background-color: #f8f9fa; /* Light background color */
+    padding: 40px 20px; /* Padding around the footer */
+    text-align: center; /* Center text */
+    border-top: 1px solid #e0e0e0; /* Top border */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around; /* Space out sections */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.footer-section {
+    flex: 1; /* Make each section take up equal space */
+    margin: 10px; /* Margin between sections */
+    max-width: 250px; /* Optional: Limit section width */
+}
+
+.footer-section h4 {
+    font-size: 1.2rem; /* Increase heading font size */
+    margin-bottom: 15px; /* Space below heading */
+}
+
+.footer-section p {
+    font-size: 0.9rem; /* Smaller font size for text */
+    color: #666; /* Lighter color for text */
+}
+
+.social-media a {
+    display: block; /* Display each link as a block */
+    margin: 5px 0; /* Margin between social links */
+    color: #007bff; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 1rem; /* Increase icon size */
+}
+
+.social-media a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    border-top: 1px solid #e0e0e0; /* Border separating content from bottom */
+    padding-top: 10px;
+    color: #888;
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    color: #888; /* Slightly lighter text */
+}

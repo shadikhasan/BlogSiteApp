@@ -1,0 +1,35 @@
+{% extends 'frontend/base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="mb-4 text-center">Blog Posts</h1>
+        {% for post in posts %}
+            <div class="card my-3 shadow-sm border-light">
+                <div class="row g-0">
+                    {% if post.thumbnail %}  <!-- Check if the post has a thumbnail -->
+                        <div class="col-md-4">
+                            <img src="{{ post.thumbnail }}" class="img-fluid post-image" alt="{{ post.title }}">
+                        </div>
+                    {% endif %}
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h2 class="card-title">{{ post.title }}</h2>
+                            <h6 class="card-subtitle mb-2 text-muted">Posted on {{ post.date_posted|date:"F j, Y" }} by {{ post.author_username  }}</h6>
+                            <p class="card-text">{{ post.content|safe|truncatewords:30 }}</p>
+                            <a href="#" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <div class="alert alert-info text-center" role="alert">
+                No posts available at the moment.
+            </div>
+        {% endfor %}
+    </div>
+
+    <style>
+        /* Custom styles for the blog page */
+        /* Add your CSS here */
+    </style>
+{% endblock %}

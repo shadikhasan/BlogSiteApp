@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  # Django django_application service
+  django_app:
+    build: ./backend
+    command: >
+      sh -c "python manage.py wait_for_db &&
+            python manage.py makemigrations &&
+            python manage.py migrate &&
+            python manage.py runserver 0.0.0.0:8000"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/django_app
+    environment: 
+      - DB_HOST=db
+      - DB_NAME=testdb
+      - DB_USER=postgres
+      - DB_PASS=ss
+    depends_on:
+      - db  # Ensure that the database service is started before the django_app
+
+  # PostgreSQL database service
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: testdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ss
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # React frontend service
+  react_app:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/frontend
+      - node_modules:/frontend/node_modules
+    command: >
+      sh -c "npm install && npm run dev"
+    depends_on:
+      - django_app
+
+volumes:
+  postgres_data:
+  node_modules:

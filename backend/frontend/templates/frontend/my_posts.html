@@ -1,0 +1,38 @@
+<!-- myapp/templates/myapp/my_posts.html -->
+{% extends "myapp/base.html" %}
+
+{% block title %}My Posts{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h1 class="mb-4">My Posts</h1>
+
+        {% if posts %}
+            <ul class="list-group">
+                {% for post in posts %}
+                    <li class="list-group-item list-group-item-action mb-3 shadow-sm p-4 rounded"> <!-- Added action class, shadow, and padding -->
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <h5 class="mb-2">
+                                    <a href="{% url 'post-detail' post.id %}" class="text-decoration-none text-dark">{{ post.title }}</a>
+                                </h5>
+                                <p class="text-muted small mb-1">
+                                    Posted on {{ post.date_posted|date:"F j, Y, g:i a" }} | {{ post.category.name }}
+                                </p>
+                                <p class="mb-2">{{ post.content|safe|truncatewords:20 }}</p>
+                            </div>
+                            <div class="d-flex flex-column justify-content-center">
+                                <a href="{% url 'edit-post' post.id %}" class="btn btn-warning btn-sm mb-1">Edit</a>
+                                <a href="{% url 'delete-post' post.id %}" class="btn btn-danger btn-sm">Delete</a> <!-- Optional delete button -->
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <div class="alert alert-info text-center" role="alert">
+                You have no posts yet. <a href="{% url 'create-post' %}" class="alert-link">Create one now!</a>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

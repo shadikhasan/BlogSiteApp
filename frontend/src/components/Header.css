@@ -1,0 +1,4 @@
+/* src/components/Header.css */
+.navbar-nav .nav-item:hover .dropdown-menu {
+    display: block; /* Show dropdown on hover */
+}
