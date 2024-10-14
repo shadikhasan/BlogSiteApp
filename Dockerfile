@@ -1,38 +1,43 @@
-# Stage 1: Django Backend
-FROM python:3.10-slim AS backend
+# Stage 1: Build React frontend
+FROM node:20-alpine AS frontend-build
+
+# Set working directory for frontend
+WORKDIR /frontend
+
+# Copy frontend dependencies
+COPY ./frontend/package*.json ./
+
+# Install frontend dependencies
+RUN npm install
+
+# Copy frontend project files
+COPY ./frontend ./
+
+# Build frontend assets
+RUN npm run build
+
+# Stage 2: Setup Django backend
+FROM python:3.10-slim
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# Set work directory
-WORKDIR /backend
+# Set working directory for backend
+WORKDIR /app
 
-# Install dependencies
-COPY backend/requirements.txt ./
+# Install backend dependencies
+COPY ./backend/requirements.txt ./
 RUN pip install --no-cache-dir --upgrade pip && pip install --no-cache-dir -r requirements.txt
 
-# Copy project files to the working directory
-COPY backend/ ./
+# Copy backend project files
+COPY ./backend ./
 
-# Stage 2: React Frontend
-FROM node:20-alpine AS frontend
+# Copy built frontend assets to backend static folder
+COPY --from=frontend-build /frontend/build ./static/
 
-# Set the working directory in the container
-WORKDIR /frontend
-
-# Copy package.json and package-lock.json to the working directory
-COPY frontend/package*.json ./
-
-# Install dependencies
-RUN npm install
-
-# Copy the rest of the application code to the working directory
-COPY frontend/ ./
-
-# Final Stage: Expose ports for both apps
+# Expose backend port
 EXPOSE 8000
-EXPOSE 5173
 
-# Start the applications
-CMD ["sh", "-c", "python manage.py runserver 0.0.0.0:8000 & npm run dev"]
+# Run Django server
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
